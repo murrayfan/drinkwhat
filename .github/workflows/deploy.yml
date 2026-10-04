@@ -1,0 +1,76 @@
+# 推送到 master 時自動檢查、測試、建置並部署到 GitHub Pages
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+defaults:
+  run:
+    working-directory: drink-spinner
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: pnpm/action-setup@v4
+        with:
+          package_json_file: drink-spinner/package.json
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: pnpm
+          cache-dependency-path: drink-spinner/pnpm-lock.yaml
+
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run lint
+      - run: pnpm test
+
+      - name: 決定網站路徑
+        # 自訂網域或 <帳號>.github.io 儲存庫在根目錄；其他在 /<儲存庫名稱>/
+        # 可在 Settings → Secrets and variables → Actions → Variables 設定 BASE_PATH 覆寫
+        env:
+          REPO: ${{ github.event.repository.name }}
+          OVERRIDE: ${{ vars.BASE_PATH }}
+        run: |
+          if [ -n "$OVERRIDE" ]; then base="$OVERRIDE"
+          elif [[ "$REPO" == *.github.io ]]; then base="/"
+          else base="/$REPO/"
+          fi
+          echo "BASE_PATH=$base" >> "$GITHUB_ENV"
+          echo "網站路徑：$base"
+
+      - name: 建置
+        run: pnpm run build
+        env:
+          VITE_CONTACT_EMAIL: ${{ vars.VITE_CONTACT_EMAIL }}
+
+      # GitHub Pages 不支援 SPA 路徑回退：用 404.html 載入同一個 App
+      - run: cp dist/index.html dist/404.html
+
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: drink-spinner/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

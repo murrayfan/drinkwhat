@@ -1,0 +1,28 @@
+{
+  "name": "rocky10-dev",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "remoteUser": "dev",
+
+  // API key 從 Mac 主機的環境變數帶入，不寫死在檔案裡
+  "containerEnv": {
+    "CLAUDE_CODE_OAUTH_TOKEN": "${localEnv:ANTHROPIC_API_KEY}",
+    "GEMINI_API_KEY": "${localEnv:GEMINI_API_KEY}",
+    "CLAUDE_CONFIG_DIR": "/home/dev/.claude"
+  },
+
+  // 讓兩個 CLI 的設定、登入狀態在 rebuild 後保留
+  "mounts": [
+    "source=claude-config-${devcontainerId},target=/home/dev/.claude,type=volume",
+    "source=gemini-config-${devcontainerId},target=/home/dev/.gemini,type=volume"
+  ],
+
+  "customizations": {
+    "vscode": {
+      "extensions": ["anthropic.claude-code"]
+    }
+  },
+
+  "postCreateCommand": "node -v && pnpm -v && claude --version && gemini --version"
+}

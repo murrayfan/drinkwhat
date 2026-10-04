@@ -1,0 +1,11 @@
+# pnpm 本機套件快取
+.pnpm-store/
+node_modules/
+
+# 系統檔
+.DS_Store
+Thumbs.db
+
+# 本機環境變數（含聯絡信箱等設定）
+.env.local
+.env.*.local

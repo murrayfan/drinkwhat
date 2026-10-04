@@ -1,0 +1,204 @@
+{
+  "source": "OpenStreetMap 全台飲料店分店數統計",
+  "sourceUrl": "https://www.openstreetmap.org/copyright",
+  "license": "© OpenStreetMap contributors（ODbL）",
+  "rankLabel": "全台分店數",
+  "period": "2026-10-04 資料快照",
+  "updatedAt": "2026-10-04",
+  "brands": [
+    {
+      "rank": 1,
+      "name": "清心福全",
+      "fullName": "清心福全",
+      "keywords": [
+        "清心",
+        "清新福全"
+      ],
+      "stores": 370
+    },
+    {
+      "rank": 2,
+      "name": "50嵐",
+      "fullName": "50嵐",
+      "keywords": [
+        "50嵐",
+        "五十嵐"
+      ],
+      "stores": 325
+    },
+    {
+      "rank": 3,
+      "name": "CoCo都可",
+      "fullName": "CoCo都可",
+      "keywords": [
+        "CoCo",
+        "都可"
+      ],
+      "stores": 179
+    },
+    {
+      "rank": 4,
+      "name": "茶的魔手",
+      "fullName": "茶的魔手",
+      "keywords": [
+        "茶的魔手",
+        "茶之魔手",
+        "茶の魔手"
+      ],
+      "stores": 167
+    },
+    {
+      "rank": 5,
+      "name": "迷客夏",
+      "fullName": "迷客夏",
+      "keywords": [
+        "迷客夏",
+        "迷克夏",
+        "Milksha"
+      ],
+      "stores": 134
+    },
+    {
+      "rank": 6,
+      "name": "可不可",
+      "fullName": "可不可熟成紅茶",
+      "keywords": [
+        "可不可",
+        "KEBUKE"
+      ],
+      "stores": 108
+    },
+    {
+      "rank": 7,
+      "name": "鮮茶道",
+      "fullName": "鮮茶道",
+      "keywords": [
+        "鮮茶道"
+      ],
+      "stores": 91
+    },
+    {
+      "rank": 8,
+      "name": "茶湯會",
+      "fullName": "茶湯會",
+      "keywords": [
+        "茶湯會",
+        "TP TEA"
+      ],
+      "stores": 90
+    },
+    {
+      "rank": 9,
+      "name": "大苑子",
+      "fullName": "大苑子",
+      "keywords": [
+        "大苑子",
+        "DaYungs"
+      ],
+      "stores": 88
+    },
+    {
+      "rank": 10,
+      "name": "麻古茶坊",
+      "fullName": "麻古茶坊",
+      "keywords": [
+        "麻古",
+        "MACU"
+      ],
+      "stores": 84
+    },
+    {
+      "rank": 11,
+      "name": "COMEBUY",
+      "fullName": "COMEBUY",
+      "keywords": [
+        "COMEBUY",
+        "Come Buy"
+      ],
+      "stores": 61
+    },
+    {
+      "rank": 12,
+      "name": "得正",
+      "fullName": "得正",
+      "keywords": [
+        "得正",
+        "Dejeng"
+      ],
+      "stores": 31
+    },
+    {
+      "rank": 13,
+      "name": "一沐日",
+      "fullName": "一沐日",
+      "keywords": [
+        "一沐日"
+      ],
+      "stores": 30
+    },
+    {
+      "rank": 14,
+      "name": "喫茶小舖",
+      "fullName": "喫茶小舖",
+      "keywords": [
+        "喫茶小舖"
+      ],
+      "stores": 30
+    },
+    {
+      "rank": 15,
+      "name": "天仁茗茶",
+      "fullName": "天仁茗茶",
+      "keywords": [
+        "天仁"
+      ],
+      "stores": 29
+    },
+    {
+      "rank": 16,
+      "name": "五桐號",
+      "fullName": "五桐號",
+      "keywords": [
+        "五桐號"
+      ],
+      "stores": 28
+    },
+    {
+      "rank": 17,
+      "name": "珍煮丹",
+      "fullName": "珍煮丹",
+      "keywords": [
+        "珍煮丹"
+      ],
+      "stores": 28
+    },
+    {
+      "rank": 18,
+      "name": "Tea's原味",
+      "fullName": "Tea's原味",
+      "keywords": [
+        "Tea's原味",
+        "Tea's 原味"
+      ],
+      "stores": 27
+    },
+    {
+      "rank": 19,
+      "name": "春水堂",
+      "fullName": "春水堂人文茶館",
+      "keywords": [
+        "春水堂"
+      ],
+      "stores": 26
+    },
+    {
+      "rank": 20,
+      "name": "台灣第一味",
+      "fullName": "台灣第一味",
+      "keywords": [
+        "第一味"
+      ],
+      "stores": 26
+    }
+  ]
+}
